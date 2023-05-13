@@ -1,0 +1,61 @@
+@layout('layout/main')
+
+@section('styleu')
+<link rel="stylesheet" href="css/login.css">
+@endsection
+
+@section('content')
+<div id="elipse"></div>
+<div id="elipse2"></div>
+<section id="login-register">
+  @if(flashMessage('notification'))
+      <div class="alert alert-success">{{ flashMessage('notification') }}</div>
+      @endif
+  <div class="form-box">
+    <h3 class="judul"><a href="/">Nukam.id</a></h3>
+    <h3 class="login-judul">Register</h3>
+    <form id="login" class="input-login" action="{{ route('register.store')}}" method="POST">
+      {{csrfField()}}
+      <label for="Username">Username</Label>
+      <input type="text" id="name" name="name" class="input-field" required>
+      <label for="Email">Email</Label>
+      <input type="email" id="Email" name="email" class="input-field" required>
+      <label for="Password">Password</Label>
+      <input type="password" id="Password" name="password" class="input-field" required>
+    
+      <p>
+        Sudah punya akun? <a href="/login">Login</a>
+      </p>
+      <button type="submit" class="submit-btn">Register</button>
+
+    </form>
+  </div>
+  <div id="elipse3"></div>
+  <div id="elipse4"></div>
+
+  @endsection
+
+
+  @section('scriptJs')
+  {{--
+  <script src="js/login.js"></script> --}}
+  @endsection
+  {{-- <div id="elipse"></div>
+  <div id="elipse2"></div>
+  <section id="login-register">
+    <div class="depan">
+      <h3 class="judul"><a href="/">Nukam.id</a></h3>
+      <div class="form-box">
+        <form id="register" class="input-login" method="POST" action="{{route('register.store')}}">
+          {{ csrfField() }}
+          <label for="name">Your Name</Label>
+          <input type="text" id="name" name="name" class="input-field" required>
+          <label for="email">Email</Label>
+          <input type="email" id="email" name="email" class="input-field" required>
+          <label for="password">Password</Label>
+          <input type="password" id="password" name="password" class="input-field" required>
+          <button type="submit" class="submit-btn" href="/login">Register</button>
+        </form>
+      </div>
+      <div id="elipse3"></div>
+      <div id="elipse4"></div> --}}

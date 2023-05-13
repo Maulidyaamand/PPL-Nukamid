@@ -1,0 +1,63 @@
+.ellipse {
+  position: absolute;
+  width: 179px;
+  height: 165px;
+  background: rgba(6, 0, 0, 0.11);
+  border-radius: 50%;
+  transform: rotate(45deg) translateX(12px);
+}
+
+.ellipse2 {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 179px;
+  height: 165px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
+.gambar img {
+  /* Ellipse 14 */
+  width: 240px;
+  height: auto;
+  background-image: url("/img/muka.jpg");
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+
+.tentang-kami {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line1 {
+  /* Line 9 */
+
+  position: absolute;
+  width: 170px;
+  height: 0px;
+  left: 720px;
+  top: 420px;
+
+  border: 1px solid #000000;
+  transform: rotate(180deg);
+}
+
+.line0 {
+  /* Line 8 */
+
+  position: absolute;
+  width: 120px;
+  height: 0px;
+  left: 480px;
+  top: 420px;
+
+  border: 1px solid #000000;
+  transform: rotate(180deg);
+}
+
+.teks {
+  padding: 2% 25%;
+  text-align: center;
+}

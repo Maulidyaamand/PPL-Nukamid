@@ -1,0 +1,106 @@
+@layout('layout/main')
+
+@section('styleu')
+<link rel="stylesheet" href="/css/beranda.css" />
+@endsection
+
+@section('content')
+
+<div class="beranda">
+  <section id="now-playing">
+    <h5>| Now Playing</h5>
+
+
+    <!-- Now Playing Container -->
+    <section class="nowplay-container">
+      <div class="swiper-wrapper flex">
+        @each(np in nowPlay)
+        <div class="box">
+          <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
+        </div>
+        @end
+      </div>
+    </section>
+
+
+    <!-- UpComing Container -->
+    <section id="upcoming">
+      <h5>| Upcoming</h5>
+      <section class="upcoming-container ">
+        <div class="swiper-wrapper flex">
+          @each(uc in upComing)
+          <div class="box">
+            <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
+          </div>
+          @end
+        </div>
+
+      </section>
+
+    </section>
+
+
+  </section>
+
+  <section id="new-series">
+    <h5>| New Series</h5>
+    <img />
+  </section>
+
+  <section class="search-min">
+    <h3>Search Movie</h3>
+    <div class="line"></div>
+    <div class="pilihan">
+      <select name="type" id="type">
+        <option value="all-type">All type</option>
+        <option value="crime">Crime</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="horror">Horror</option>
+        <option value="romance">Romance</option>
+        <option value="sc-fict">Science Fiction</option>
+        <option value="slc-life">Slice of Life</option>
+        <option value="thriller">Thriller</option>
+        <option value="war">War</option>
+        <option value="west">Western</option>
+      </select>
+      <select name="years" id="years">
+        <option value="all-years">All years</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2017">2017</option>
+      </select>
+      <select name="countries" id="countries">
+        <option value="all-countries">All countries</option>
+        <option value="america">America</option>
+        <option value="indonesia">Indoneesia</option>
+        <option value="india">India</option>
+        <option value="japan">Japan</option>
+        <option value="korea">Korea</option>
+        <option value="malaysia">Malaysia</option>
+        <option value="uk">UK</option>
+      </select>
+      <select name="wualities" id="qualities">
+        <option value="all-quaalities">All qualities</option>
+        <option value="144p">144p</option>
+        <option value="240p">240p</option>
+        <option value="360p">360p</option>
+        <option value="480p">480p</option>
+        <option value="720p">720p</option>
+        <option value="1080p">1080p</option>
+        <option value="1440p">1440p</option>
+        <option value="2k">2k/2560p</option>
+        <option value="4k">4k/3840p</option>
+      </select>
+    </div>
+    <button type="submit" id="btn-search">Search</button>
+  </section>
+
+  <h4 class="mvm">Most Viewed Movies</h4>
+</div>
+@endsection

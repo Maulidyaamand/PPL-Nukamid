@@ -1,0 +1,31 @@
+@layout('layout/main')
+
+@section('styleu')
+<link rel="stylesheet" href="css/login.css">
+@endsection
+
+@section('content')
+<h1>login</h1>
+<div id="elipse"></div>
+<div id="elipse2"></div>
+<section id="login-register">
+  <div class="form-box">
+    <h3 class="judul"><a href="/">Nukam.id</a></h3>
+    <h3 class="login-judul">Login</h3>
+    <form id="login" class="input-login" action="{{ route('login.check')}}" method="POST">
+      {{csrfField()}}
+      <label for="Email">Email</Label>
+      <input type="email" id="Email" name="email" class="input-field" required>
+      <label for="Password">Password</Label>
+      <input type="password" id="Password" name="password" class="input-field" required>
+      
+    <p>
+      Belum punya akun? <a href="/register">Register</a>
+    </p>
+    <button type="submit" class="submit-btn">Log In</button>
+      
+    </form>
+  </div>
+  <div id="elipse3"></div>
+  <div id="elipse4"></div>
+  @endsection

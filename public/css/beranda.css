@@ -1,0 +1,120 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.beranda {
+  margin-left: 48px;
+}
+
+.search-min {
+  width: 268px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  padding: 5px 2px 50px 24px;
+  border-radius: 15px;
+  margin-left: 72%;
+}
+
+.line {
+  top: -32px;
+  position: relative;
+  height: 2px;
+  width: 250px;
+  background: rgb(121, 9, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 16, 1) 7%,
+    rgba(2, 0, 36, 1) 93%
+  );
+  z-index: -1;
+}
+
+.search-min h3:nth-child(1) {
+  height: auto;
+  width: 142px;
+  z-index: 2;
+  background-color: white;
+}
+
+.pilihan {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.pilihan select {
+  margin-top: 16px;
+  border-radius: 4px;
+  padding: 4px 0;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+}
+
+#btn-search {
+  width: 250px;
+  font-weight: 300;
+  margin-top: 16px;
+  background: rgb(121, 9, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 16, 1) 7%,
+    rgba(2, 0, 36, 1) 93%
+  );
+  border: none;
+  color: white;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+#btn-search:hover {
+  font-weight: 400;
+  background: #000000;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+}
+
+.mvm {
+  margin-left: 72%;
+}
+
+.nowplay-container{
+  height: 100%;
+  width: auto;
+  /* background-color: aqua; */
+}
+
+
+
+.swiper-wrapper{
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  
+}
+
+.box{
+  /* border-radius: 12px; */
+  margin: 0 20px 0 0;
+}
+
+
+.box img{
+  height: 260px;
+  width:375px;
+  /* object-fit: fill; */
+  margin: 0 8px;
+  border-radius: 12px;
+}
+
+.box1 img{
+  height: 150px;
+  width:250px;
+  /* object-fit: fill; */
+  margin: 0 8px;
+  border-radius: 12px;
+}
+
+
+.flex {
+  display: flex;
+}
+
