@@ -8,21 +8,28 @@
 <div id="elipse"></div>
 <div id="elipse2"></div>
 <section id="login-register">
-  @if(flashMessage('notification'))
-      <div class="alert alert-success">{{ flashMessage('notification') }}</div>
-      @endif
   <div class="form-box">
     <h3 class="judul"><a href="/">Nukam.id</a></h3>
     <h3 class="login-judul">Register</h3>
-    <form id="login" class="input-login" action="{{ route('register.store')}}" method="POST">
-      {{csrfField()}}
-      <label for="Username">Username</Label>
-      <input type="text" id="name" name="name" class="input-field" required>
+    <form id="login" class="input-login" action="{{ route('auth.register')}}" method="POST">
+      <label for="Username">Name</Label>
+      <input type="text" id="name" name="name" class="input-field" value="{{flashMessages.get('name')?? ''}}"
+        required/>
+      @if (flashMessages.has('errors.name'))
+      <small style="color: red;">
+        {{ flashMessages.get('errors.name') }}
+      </small>
+      @endif
       <label for="Email">Email</Label>
-      <input type="email" id="Email" name="email" class="input-field" required>
+      <input type="email" id="Email" name="email" class="input-field" value="{{ flashMessages.get('email') ?? '' }}" required>
+      @if (flashMessages.has('errors.email'))
+      <small style="color: red;">
+        {{ flashMessages.get('errors.email') }}
+      </small>
+      @endif
       <label for="Password">Password</Label>
-      <input type="password" id="Password" name="password" class="input-field" required>
-    
+      <input type="password" id="Password" name="password" class="input-field"/>
+
       <p>
         Sudah punya akun? <a href="/login">Login</a>
       </p>

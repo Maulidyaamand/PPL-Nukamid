@@ -7,40 +7,28 @@
 @section('content')
 
 <div class="beranda">
+  <!-- Now Playing Container -->
+  <h5>| Now Playing</h5>
   <section id="now-playing">
-    <h5>| Now Playing</h5>
-
-
-    <!-- Now Playing Container -->
-    <section class="nowplay-container">
-      <div class="swiper-wrapper flex">
-        @each(np in nowPlay)
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
-        </div>
-        @end
-      </div>
-    </section>
+    <div class="img-container">
+      @each(np in nowPlay)
+      <img class="now-playing" src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
+      @end
+    </div>
+  </section>
+  
 
 
     <!-- UpComing Container -->
-    <section id="upcoming">
       <h5>| Upcoming</h5>
-      <section class="upcoming-container ">
-        <div class="swiper-wrapper flex">
+      <section id="upcoming">
+        <div class="img-container">
           @each(uc in upComing)
-          <div class="box">
-            <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
-          </div>
+            <img class="upcoming" src="https://image.tmdb.org/t/p/w440_and_h660_face{{uc.poster_path}}" alt="">
           @end
         </div>
 
       </section>
-
-    </section>
-
-
-  </section>
 
   <section id="new-series">
     <h5>| New Series</h5>

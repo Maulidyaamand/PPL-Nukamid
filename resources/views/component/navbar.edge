@@ -1,17 +1,25 @@
+
 <link rel="stylesheet" href="css/nav.css">
 <header>
     <div class="logo">
-        <h1>Nukam.id</h1>
+        <a href="/" ><h1>Nukam.id</h1></a>
     </div>
+    @if (auth.user)
+    <a href="{{ route('auth.logout') }}">Logout</a>
+  @endif
     <nav>
         <ul>
             <div id="search">
-                <a> <input type="text" placeholder="Search movies..." class="sm-input" /><img class="search"
+                <a> <input type="text" placeholder="Search movies..." class="sm-input"/><img class="search"
                         src="/img/icons8-search-24.png" /></a>
             </div>
             <div id="login">
-                <a href="/login" class="sm-login">Login | SignUp</a>
-            </div>
+                @if(auth.user)
+                  <span class="sm-login">{{ auth.user.name }}</span>
+                @else
+                  <a href="/login" class="sm-login">Login | SignUp</a>
+                @endif
+              </div>
         </ul>
 </header>
 

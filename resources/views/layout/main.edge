@@ -13,17 +13,17 @@
 </head>
 
 <body>
-    {{-- @if(request.originalUrl() !== '/login' && request.originalUrl() !== '/register') --}}
+    @if(request.url() !== '/login' && request.url() !== '/register')
     <!-- Tampilkan navbar hanya jika bukan halaman login -->
-    {{-- @include('component/navbar') --}}
-    {{-- @endif --}}
+    @include('component/navbar')
+    @endif
 
     @!section('content')
 
-    {{-- @if(request.originalUrl() !== '/login' && request.originalUrl() !== '/register')
+    @if(request.url() !== '/login' && request.url() !== '/register')
     <!-- Tampilkan footer jika bukan halaman login -->
     @include('component/footer')
-    @endif --}}
+    @endif
 
 </body>
 
