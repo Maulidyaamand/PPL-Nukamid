@@ -7,12 +7,14 @@
 }
 
 .search-min {
+  margin-top: -30%;
   width: 268px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
   padding: 5px 2px 50px 24px;
   border-radius: 15px;
   margin-left: 72%;
   position: relative;
+  margin-bottom: 12%;
 }
 
 .line {
@@ -71,10 +73,6 @@
   font-weight: 400;
   background: #000000;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
-}
-
-.mvm {
-  margin-left: 72%;
 }
 
 #now-playing {
@@ -150,14 +148,49 @@
   border-radius: 10px;
 }
 
-.most-view {
-  margin-left: 72%;
+#most-view {
+  width: 70%;
 }
 
-.mostview {
-  width: 72px;
-  height: 40px;
-  object-fit: cover;
+.mv-container {
   display: flex;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px; /* Menambahkan jarak antara item */
+}
+
+.mv-item {
+  position: relative; /* Menjadikan .index sebagai elemen posisi terkait */
+  width: 98px;
+  height: 124px;
+  margin-bottom: 8%;
+  margin-right: 20px;
+}
+
+.mv-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.mv-item .index {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 16, 1) 7%,
+    rgba(2, 0, 36, 1) 93%
+  );
+  padding: 2px 5px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.mv-item .title {
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
 }
