@@ -6,36 +6,65 @@
 
 @section('content')
 
+
+<div class="bagian-atas">
+  <ul>
+    <p><a href="#now-playing"><img src="/img/icons8-home-page-24.png" /> Playing</a></p>
+    <p><a class="naik" href="#upcoming"><img src="/img/icons8-tear-off-calendar-24.png" /> Upcoming</a></p>
+    <p><a class="naik" href="#most-view"><img src="/img/icons8-information-24.png" /> Most View</a></p>
+    <p><a class="naik" href="#search-min"><img src="/img/icons8-film-reel-24.png" /> Genre</a></p>
+  </ul>
+</div>
+
 <div class="beranda">
   <!-- Now Playing Container -->
   <h5>| Now Playing</h5>
-  <section id="now-playing">
+<section id="now-playing">
+  <div class="img-container">
+    @each(np in nowPlay)
+      <a href="{{ route('movies.show', { id: np.id }) }}">
+        <img class="now-playing" src="https://image.tmdb.org/t/p/w440_and_h660_face{{ np.poster_path }}" alt="">
+      </a>
+    @end
+  </div>
+</section>
+
+
+
+
+  <!-- UpComing Container -->
+  <h5>| Upcoming</h5>
+  <section id="upcoming">
     <div class="img-container">
-      @each(np in nowPlay)
-      <img class="now-playing" src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
+      @each(uc in upComing)
+      
+      <a href="{{ route('movies.show', { id: uc.id }) }}">
+      <img class="upcoming" src="https://image.tmdb.org/t/p/w440_and_h660_face{{uc.poster_path}}" alt="">
+      </a>
+      @end
+    </div>
+
+  </section>
+
+  <h5>| Most Viewed</h5>
+  <section id="most-view">
+    <div class="mv-container">
+      @each((mv, index) in mostView)
+      <div class="mv-item">
+        <span class="index">{{ 1 + index }}</span>
+        
+      <a href="{{ route('movies.show', { id: mv.id }) }}">
+        <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{mv.poster_path}}" alt="">
+      </a>
+      
+      <span class="title">{{ mv.title }}</span>
+      </div>
       @end
     </div>
   </section>
-  
 
 
-    <!-- UpComing Container -->
-      <h5>| Upcoming</h5>
-      <section id="upcoming">
-        <div class="img-container">
-          @each(uc in upComing)
-            <img class="upcoming" src="https://image.tmdb.org/t/p/w440_and_h660_face{{uc.poster_path}}" alt="">
-          @end
-        </div>
-
-      </section>
-
-  <section id="new-series">
-    <h5>| New Series</h5>
-    <img />
-  </section>
-
-  <section class="search-min">
+  <section class="search-min" id="search-min">
     <h3>Search Movie</h3>
     <div class="line"></div>
     <div class="pilihan">
@@ -88,7 +117,5 @@
     </div>
     <button type="submit" id="btn-search">Search</button>
   </section>
-
-  <h4 class="mvm">Most Viewed Movies</h4>
 </div>
 @endsection

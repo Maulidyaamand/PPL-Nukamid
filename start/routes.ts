@@ -20,7 +20,13 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.on("/detail").render("page/moviedesc");
+Route.on('/detail').render('page/moviedesc');
+Route.get('/contact', async ({ view }) => {
+    return view.render('page/contact')
+  })
+Route.get('/aboutus', async ({ view }) => {
+      return view.render('page/aboutus')
+    })
 
 
 Route.get('/', 'BerandaController.index')
@@ -29,4 +35,6 @@ Route.post('register', 'AuthController.register').as('auth.register') // ++
 Route.get('login', 'AuthController.loginShow').as('auth.login.show')
 Route.post('login', 'AuthController.login').as('auth.login')          // ++
 Route.get('logout', 'AuthController.logout').as('auth.logout')
-
+// routes.ts
+Route.post('/send-email', 'ContactsController.sendEmail')
+Route.get('/movies/:id', 'MovieDescsController.show').as('movies.show')
