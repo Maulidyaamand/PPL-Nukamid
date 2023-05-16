@@ -6,16 +6,24 @@
     margin-left: 48px;
   }
 
-  .column {
-    float: left;
-    width: 100%;
-    padding: 1px;
-    background: #aaa;
+  .row{
+    margin: 10px 70px;
+    
+  }
+
+  .card {
+    border-radius: 12px;
+    height: auto;
+    border: solid 1px;
+    margin-top: 30px;
+    cursor: pointer;
 }
 
+.card h2 p{
+  display: flex;
+}
 
 img{
-  width: 150px;
-  float: left;
-  margin-right: 10px;
+  width: 80px;
+  margin-right: 20px;
 }

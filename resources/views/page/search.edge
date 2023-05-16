@@ -14,13 +14,14 @@
 
 <div class="row">
     @each(movie in findMovie)
-    <div class="column">
+    <div class="card">
         <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{movie.poster_path}}">
         <h2 class="title">{{movie.title}}</h2>
         <p class="overview">{{movie.overview}}</p>
-        @end
     </div>
+    @end
 </div>
+
 
 
 {{-- <section>
@@ -28,9 +29,5 @@
         <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{findMovie[0].poster_path}}" alt="">
     </div>
 </section> --}}
-
-<div>
-
-</div>
 
 @endsection
