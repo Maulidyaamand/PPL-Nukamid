@@ -33,9 +33,6 @@ body {
   height: 39px;
   left: 411px;
   top: 124px;
-
-  font-style: normal;
-  font-weight: 700;
   font-size: 26px;
   line-height: 39px;
 
@@ -72,6 +69,13 @@ body {
   /* identical to box height */
 
   color: #000000;
+}
+
+.bookmark {
+  position: absolute;
+  width: 36px;
+  left: 748px;
+  top: 184px;
 }
 
 .genre {
