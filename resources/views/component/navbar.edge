@@ -8,27 +8,53 @@
   <nav>
     <ul>
       <div id="search">
-        <a>
-          <input type="text" placeholder="Search movies..." class="sm-input" />
-          <img class="search-icon" src="/img/icons8-search-24.png" />
-        </a>
+        <form method='post' action="{{route('search.movie')}}">
+
+          <input type="text" placeholder="Search movies..." name="sm-input" id="sm-input">
+          {{-- <button type="Submit"> --}}
+            <img class="search-icon" src="/img/icons8-search-24.png" />
+          </button>
+        </form>
+
       </div>
-      
-      <ul class="menu">
-        <li>
-          @if (auth.user)
-          <div class="username">
-            <span>{{ auth.user.name }}</span>
-            <ul class="dropdown-menu">
-              <li><a href="{{ route('auth.logout') }}">Logout</a></li>
-              <li><a href="#">Watchlist</a></li>
-            </ul>
+
+      <!-- list seacrh movie -->
+      {{-- <div class="search-list" id="search-list">
+        <div class="search-list-item">
+          <div class="search-item-movie">
+            <img src="../img/batmanbegin.png">
           </div>
-          @else
-          <a href="/login">Login | SignUp</a>
-          @endif
-        </li>
-      </ul>
+          <div class="search-item-info">
+            <h3>Batman Begin</h3>
+            <p>2018</p>
+          </div>
+        </div>
+
+        <div class="search-list-item">
+          <div class="search-item-movie">
+            <img src="../img/batmanbegin.png">
+          </div>
+          <div class="search-item-info">
+            <h3>Batman Begin</h3>
+            <p>2018</p>
+          </div>
+        </div> --}}
+
+        <ul class="menu">
+          <li>
+            @if (auth.user)
+            <div class="username">
+              <span>{{ auth.user.name }}</span>
+              <ul class="dropdown-menu">
+                <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+                <li><a href="#">Watchlist</a></li>
+              </ul>
+            </div>
+            @else
+            <a href="/login">Login | SignUp</a>
+            @endif
+          </li>
+        </ul>
       </div>
     </ul>
 </header>

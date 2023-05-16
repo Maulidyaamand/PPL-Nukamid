@@ -21,12 +21,16 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.on('/detail').render('page/moviedesc');
+Route.on('/search').render('page/search');
 Route.get('/contact', async ({ view }) => {
     return view.render('page/contact')
   })
 Route.get('/aboutus', async ({ view }) => {
       return view.render('page/aboutus')
     })
+
+
+Route.post('search', 'SearchesController.index').as('search.movie')
 
 
 Route.get('/', 'BerandaController.index')
