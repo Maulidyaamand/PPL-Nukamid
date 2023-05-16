@@ -12,7 +12,7 @@
     <p><a href="#now-playing"><img src="/img/icons8-home-page-24.png" /> Playing</a></p>
     <p><a class="naik" href="#upcoming"><img src="/img/icons8-tear-off-calendar-24.png" /> Upcoming</a></p>
     <p><a class="naik" href="#most-view"><img src="/img/icons8-information-24.png" /> Most View</a></p>
-    <p><a class="naik"><img src="/img/icons8-film-reel-24.png" /> Genre</a></p>
+    <p><a class="naik" href="#search-min"><img src="/img/icons8-film-reel-24.png" /> Genre</a></p>
   </ul>
 </div>
 
@@ -37,7 +37,10 @@
   <section id="upcoming">
     <div class="img-container">
       @each(uc in upComing)
+      
+      <a href="{{ route('movies.show', { id: uc.id }) }}">
       <img class="upcoming" src="https://image.tmdb.org/t/p/w440_and_h660_face{{uc.poster_path}}" alt="">
+      </a>
       @end
     </div>
 
@@ -49,15 +52,19 @@
       @each((mv, index) in mostView)
       <div class="mv-item">
         <span class="index">{{ 1 + index }}</span>
+        
+      <a href="{{ route('movies.show', { id: mv.id }) }}">
         <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{mv.poster_path}}" alt="">
-        <span class="title">{{ mv.title }}</span>
+      </a>
+      
+      <span class="title">{{ mv.title }}</span>
       </div>
       @end
     </div>
   </section>
 
 
-  <section class="search-min">
+  <section class="search-min" id="search-min">
     <h3>Search Movie</h3>
     <div class="line"></div>
     <div class="pilihan">

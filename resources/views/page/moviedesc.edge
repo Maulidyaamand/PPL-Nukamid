@@ -13,50 +13,59 @@
         <img class="poster" src="https://image.tmdb.org/t/p/w200{{ movie.poster_path }}" alt="{{movie.title}}">
         <h2 class="title">{{ movie.title }}</h2>
         <div class="line"></div>
-        <p class="release">Release date : {{movie.release_date}}</p>
-        <p class="desc"><b>Description:</b>  <br>{{ movie.overview }}</p>
-    </div>
-    <div class="genre">
-        <ul class="genre-list">
-            <h4><b>Genre:</b> </h4>
-            @each(genre in movie.genres)
-            <li>{{ genre.name }}</li>
-            @end
-        </ul>
-    </div>
-    
+        <p class="release"><b>Release date :</b> {{movie.release_date}}
+            <br class="line-break">
+            <b>Director:</b>{{ movieDirector }}
+            <br class="line-break">
+            <b>Rating:</b> {{ movie.vote_average }}
+        </p>
 
-    <h4>Actors:</h4>
-    <ul>
+        <div class="genre">
+            <ul class="genre-list">
+                <h4><b>Genre:</b> </h4>
+                @each(genre in movie.genres)
+                <li>{{ genre.name }}</li>
+                @end
+            </ul>
+        </div>
+        <p class="desc"><b>Description:</b> <br>{{ movie.overview }}</p>
+    </div>
+
+
+    <h4 class="actor">Actors:</h4>
+    <ul id="cast">
         @each(castMember in cast)
         <li>
-            {{ castMember.name }}
             @if(castMember.photo)
-            <img src="https://image.tmdb.org/t/p/w200{{ castMember.photo }}" alt="{{ castMember.name }} Photo">
+            <span class="cast-img"><img src="https://image.tmdb.org/t/p/w200{{ castMember.photo }}"
+                    alt="{{ castMember.name }} Photo"></span>
+            @else
+            <span class="cast-img"><img src="/img/kosong.webp" alt="Default Photo"></span>
             @endif
+            <div>
+                <span class="cast-name">{{ castMember.name }},</span>
+                <br>
+                <span class="cast-chara">{{castMember.character}}</span>
+            </div>
         </li>
         @end
     </ul>
 
 
-    <h4>Rating:</h4>
-    <p>{{ movie.vote_average }}</p>
 
-    <h4>Director:</h4>
-    <p>{{ movieDirector }}</p>
 
-    <h4>Photos:</h4>
-    <div>
+
+
+
+    <h4 class="jdl-foto">Photos:</h4>
+    <div class="img-container" id="foto">
         @each ( backdrops in backdrops)
         <li>
             @if (backdrops.file_path)
-            <img src="https://image.tmdb.org/t/p/w200{{ backdrops.file_path }}" alt="">
+            <img class="foto-b" src="https://image.tmdb.org/t/p/w200{{ backdrops.file_path }}" alt="">
             @endif
         </li>
         @end
-
-
-
     </div>
 </div>
 
