@@ -5,3 +5,17 @@
   .search {
     margin-left: 48px;
   }
+
+  .column {
+    float: left;
+    width: 100%;
+    padding: 1px;
+    background: #aaa;
+}
+
+
+img{
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+}

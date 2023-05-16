@@ -1,1 +1,63 @@
 @layout('layout/main')
+
+
+@section('styleu')
+<link rel="stylesheet" href="../css/movidesc.css">
+@endsection
+
+@section('content')
+
+
+<div>
+    <div class="desk">
+        <img class="poster" src="https://image.tmdb.org/t/p/w200{{ movie.poster_path }}" alt="{{movie.title}}">
+        <h2 class="title">{{ movie.title }}</h2>
+        <div class="line"></div>
+        <p class="release">Release date : {{movie.release_date}}</p>
+        <p class="desc"><b>Description:</b>  <br>{{ movie.overview }}</p>
+    </div>
+    <div class="genre">
+        <ul class="genre-list">
+            <h4><b>Genre:</b> </h4>
+            @each(genre in movie.genres)
+            <li>{{ genre.name }}</li>
+            @end
+        </ul>
+    </div>
+    
+
+    <h4>Actors:</h4>
+    <ul>
+        @each(castMember in cast)
+        <li>
+            {{ castMember.name }}
+            @if(castMember.photo)
+            <img src="https://image.tmdb.org/t/p/w200{{ castMember.photo }}" alt="{{ castMember.name }} Photo">
+            @endif
+        </li>
+        @end
+    </ul>
+
+
+    <h4>Rating:</h4>
+    <p>{{ movie.vote_average }}</p>
+
+    <h4>Director:</h4>
+    <p>{{ movieDirector }}</p>
+
+    <h4>Photos:</h4>
+    <div>
+        @each ( backdrops in backdrops)
+        <li>
+            @if (backdrops.file_path)
+            <img src="https://image.tmdb.org/t/p/w200{{ backdrops.file_path }}" alt="">
+            @endif
+        </li>
+        @end
+
+
+
+    </div>
+</div>
+
+@endsection

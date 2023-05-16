@@ -69,3 +69,22 @@
 .card img {
   filter: invert(1);
 }
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  background: rgb(121, 9, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 16, 1) 7%,
+    rgba(2, 0, 36, 1) 93%
+  );
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}

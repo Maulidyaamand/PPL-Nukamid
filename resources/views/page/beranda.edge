@@ -6,46 +6,54 @@
 
 @section('content')
 
+
+<div class="bagian-atas">
+  <ul>
+    <p><a href="#now-playing"><img src="/img/icons8-home-page-24.png" /> Playing</a></p>
+    <p><a class="naik" href="#upcoming"><img src="/img/icons8-tear-off-calendar-24.png" /> Upcoming</a></p>
+    <p><a class="naik" href="#most-view"><img src="/img/icons8-information-24.png" /> Most View</a></p>
+    <p><a class="naik"><img src="/img/icons8-film-reel-24.png" /> Genre</a></p>
+  </ul>
+</div>
+
 <div class="beranda">
-  <section id="now-playing">
-    <h5>| Now Playing</h5>
+  <!-- Now Playing Container -->
+  <h5>| Now Playing</h5>
+<section id="now-playing">
+  <div class="img-container">
+    @each(np in nowPlay)
+      <a href="{{ route('movies.show', { id: np.id }) }}">
+        <img class="now-playing" src="https://image.tmdb.org/t/p/w440_and_h660_face{{ np.poster_path }}" alt="">
+      </a>
+    @end
+  </div>
+</section>
 
 
-    <!-- Now Playing Container -->
-    <section class="nowplay-container">
-      <div class="swiper-wrapper flex">
-        @each(np in nowPlay)
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
-        </div>
-        @end
+  <!-- UpComing Container -->
+  <h5>| Upcoming</h5>
+  <section id="upcoming">
+    <div class="img-container">
+      @each(uc in upComing)
+      <img class="upcoming" src="https://image.tmdb.org/t/p/w440_and_h660_face{{uc.poster_path}}" alt="">
+      @end
+    </div>
+
+  </section>
+
+  <h5>| Most Viewed</h5>
+  <section id="most-view">
+    <div class="mv-container">
+      @each((mv, index) in mostView)
+      <div class="mv-item">
+        <span class="index">{{ 1 + index }}</span>
+        <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{mv.poster_path}}" alt="">
+        <span class="title">{{ mv.title }}</span>
       </div>
-    </section>
-
-
-    <!-- UpComing Container -->
-    <section id="upcoming">
-      <h5>| Upcoming</h5>
-      <section class="upcoming-container ">
-        <div class="swiper-wrapper flex">
-          @each(uc in upComing)
-          <div class="box">
-            <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{np.poster_path}}" alt="">
-          </div>
-          @end
-        </div>
-
-      </section>
-
-    </section>
-
-
+      @end
+    </div>
   </section>
 
-  <section id="new-series">
-    <h5>| New Series</h5>
-    <img />
-  </section>
 
   <section class="search-min">
     <h3>Search Movie</h3>
@@ -100,7 +108,5 @@
     </div>
     <button type="submit" id="btn-search">Search</button>
   </section>
-
-  <h4 class="mvm">Most Viewed Movies</h4>
 </div>
 @endsection

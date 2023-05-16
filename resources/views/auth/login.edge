@@ -12,18 +12,22 @@
   <div class="form-box">
     <h3 class="judul"><a href="/">Nukam.id</a></h3>
     <h3 class="login-judul">Login</h3>
-    <form id="login" class="input-login" action="{{ route('login.check')}}" method="POST">
-      {{csrfField()}}
+    <form id="login" class="input-login" action="{{ route('auth.login')}}" method="POST">
+      @if (flashMessages.has('form'))
+      <div role="alert">
+        {{ flashMessages.get('form') }}
+      </div>
+      @endif
       <label for="Email">Email</Label>
       <input type="email" id="Email" name="email" class="input-field" required>
       <label for="Password">Password</Label>
       <input type="password" id="Password" name="password" class="input-field" required>
-      
-    <p>
-      Belum punya akun? <a href="/register">Register</a>
-    </p>
-    <button type="submit" class="submit-btn">Log In</button>
-      
+
+      <p>
+        Belum punya akun? <a href="/register">Register</a>
+      </p>
+      <button type="submit" class="submit-btn">Log In</button>
+
     </form>
   </div>
   <div id="elipse3"></div>

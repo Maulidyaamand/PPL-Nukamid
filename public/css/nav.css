@@ -1,13 +1,12 @@
 * {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
 }
 
 body {
   margin-block-end: 0;
   margin-block-start: 0;
   margin-inline-start: 0;
-  width: 1370px;
+  width: 100%;
 }
 
 header {
@@ -31,16 +30,62 @@ nav {
   padding-left: 20px;
 }
 
-.search {
+#search {
+  position: relative; /* Tambahkan posisi relatif pada elemen induk */
+}
+
+.search-icon {
   width: 20px;
   position: absolute;
-  right: 37%;
-  top: 37px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
   opacity: 0.5;
 }
 
-.sm-input {
-  margin-top: 15px;
+.search-list{
+  position: absolute;
+  right: 10;
+  top :100%;
+  max-height: 400px;
+  overflow-y: scroll;
+  z-index: 10;
+}
+
+.search-list .search-list-item{
+  background: rgb(121, 9, 16);
+  color: white;
+  padding: 0.5rem;
+  width: 350px;
+  cursor:pointer;
+}
+
+.search-list-item{
+  display: flex;
+  align-items: center;
+}
+
+.search-item-movie img{
+  width: 50px;
+  margin-right: 1rem;
+}
+
+.search-item-info h3{
+  
+  font-weight: 600;
+  font-size: 1rem;
+
+}
+
+.search-item-info p{
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  opacity:0.6;
+}
+
+.hide-search-list{
+  display:none;
 }
 
 .sm-login {
@@ -82,7 +127,6 @@ nav ul input {
 
 .bagian-atas {
   margin-top: 16px;
-  overflow-x: hidden;
 }
 
 .bagian-atas p:hover {
@@ -113,4 +157,64 @@ nav ul input {
 #login a {
   text-decoration: none;
   color: aliceblue;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.username {
+  position: relative;
+  cursor: pointer;
+}
+
+.username span {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  padding: 16px;
+  border: 1px solid #cccccc;
+  z-index: 3;
+}
+
+.username.open .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transform: translateX(-25px);
+}
+
+.dropdown-menu li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.dropdown-menu li a:hover {
+  color: black;
+  text-shadow: 0 0 2px rgb(121, 9, 16);
 }

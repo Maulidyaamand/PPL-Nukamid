@@ -1,0 +1,114 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+}
+
+.desk {
+}
+.poster {
+  /* batman begins 2 */
+
+  position: absolute;
+  width: 304px;
+  height: 256px;
+  left: 72px;
+  top: 156px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Line 4 */
+.line {
+  position: absolute;
+  width: 411px;
+  height: 0px;
+  left: 411px;
+  top: 232px;
+
+  border: 1px solid #000000;
+}
+
+.title {
+  position: absolute;
+  width: 310px;
+  height: 39px;
+  left: 411px;
+  top: 124px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 39px;
+
+  color: #000000;
+}
+
+.release {
+  /* Director : Christopher Nolan */
+
+  position: absolute;
+  width: 411px;
+  height: 23px;
+  left: 411px;
+  top: 248px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.desc {
+  /* Writer : Bob Kane, David S. Goyer, Christopher Nolan */
+
+  position: absolute;
+  width: auto;
+  left: 411px;
+  top: 284px;
+  right: 10%;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.genre {
+  /* Genre : Action, Crime, Drama */
+  list-style: none;
+  position: absolute;
+  width: auto;
+  left: 411px;
+  top: 359px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.genre-list {
+  margin-left: -42px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Jarak antara elemen genre */
+}
+
+.genre-list li {
+  font-weight: 400;
+  list-style: none;
+  /* Gaya lainnya yang Anda miliki */
+  margin-top: 20px;
+}

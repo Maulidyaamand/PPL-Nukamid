@@ -1,26 +1,62 @@
-<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="../css/nav.css">
 <header>
-    <div class="logo">
-        <h1>Nukam.id</h1>
-    </div>
-    <nav>
-        <ul>
-            <div id="search">
-                <a> <input type="text" placeholder="Search movies..." class="sm-input" /><img class="search"
-                        src="/img/icons8-search-24.png" /></a>
+  <div class="logo">
+    <a href="/">
+      <h1>Nukam.id</h1>
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <div id="search">
+        <form method='post' action="{{route('search.movie')}}">
+
+          <input type="text" placeholder="Search movies..." name="sm-input" id="sm-input">
+          {{-- <button type="Submit"> --}}
+            <img class="search-icon" src="/img/icons8-search-24.png" />
+          </button>
+        </form>
+
+      </div>
+
+      <!-- list seacrh movie -->
+      {{-- <div class="search-list" id="search-list">
+        <div class="search-list-item">
+          <div class="search-item-movie">
+            <img src="../img/batmanbegin.png">
+          </div>
+          <div class="search-item-info">
+            <h3>Batman Begin</h3>
+            <p>2018</p>
+          </div>
+        </div>
+
+        <div class="search-list-item">
+          <div class="search-item-movie">
+            <img src="../img/batmanbegin.png">
+          </div>
+          <div class="search-item-info">
+            <h3>Batman Begin</h3>
+            <p>2018</p>
+          </div>
+        </div> --}}
+
+        <ul class="menu">
+          <li>
+            @if (auth.user)
+            <div class="username">
+              <span>{{ auth.user.name }}</span>
+              <ul class="dropdown-menu">
+                <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+                <li><a href="#">Watchlist</a></li>
+              </ul>
             </div>
-            <div id="login">
-                <a href="/login" class="sm-login">Login | SignUp</a>
-            </div>
+            @else
+            <a href="/login">Login | SignUp</a>
+            @endif
+          </li>
         </ul>
+      </div>
+    </ul>
 </header>
 
-<div class="bagian-atas">
-    <ul>
-        <p><a href="#now-playing"><img src="/img/icons8-home-page-24.png" /> Playing</a></p>
-        <p><a class="naik"><img src="/img/icons8-tear-off-calendar-24.png" /> Upcoming</a></p>
-        <p><a class="naik"><img src="/img/icons8-film-reel-24.png" /> Genre</a></p>
-        <p><a class="naik"><img src="/img/icons8-information-24.png" /> New Series</a></p>
-        <p><a class="naik"><img src="/img/icons8-bookmark-page-24.png" /> Watchlist</a></p>
-    </ul>
-</div>
+<script src="/js/nav.js"></script>

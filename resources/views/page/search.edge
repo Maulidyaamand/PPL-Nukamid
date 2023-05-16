@@ -8,8 +8,29 @@
 @section('content')
 
 <div class="search">
-   
-    <h6>| hasil untuk </h6>
+    <h6>| hasil untuk {{query}} </h6>
+</div>
+
+
+<div class="row">
+    @each(movie in findMovie)
+    <div class="column">
+        <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{movie.poster_path}}">
+        <h2 class="title">{{movie.title}}</h2>
+        <p class="overview">{{movie.overview}}</p>
+        @end
+    </div>
+</div>
+
+
+{{-- <section>
+    <div class="box">
+        <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{findMovie[0].poster_path}}" alt="">
+    </div>
+</section> --}}
+
+<div>
 
 </div>
+
 @endsection
