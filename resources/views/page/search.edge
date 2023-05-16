@@ -14,13 +14,20 @@
 
 <div class="row">
     @each(movie in findMovie)
-    <div class="card">
-        <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{movie.poster_path}}">
+    <a href="{{ route('movies.show', { id: movie.id }) }}">
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w440_and_h660_face{{movie.poster_path}}">
+    </a>
+
+    <div>
         <h2 class="title">{{movie.title}}</h2>
         <p class="overview">{{movie.overview}}</p>
     </div>
-    @end
 </div>
+
+@end
+</div>
+
 
 
 

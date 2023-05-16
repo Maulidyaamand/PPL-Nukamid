@@ -5,8 +5,6 @@
 body {
 }
 
-.desk {
-}
 .poster {
   /* batman begins 2 */
 
@@ -26,7 +24,6 @@ body {
   height: 0px;
   left: 411px;
   top: 232px;
-
   border: 1px solid #000000;
 }
 
@@ -36,9 +33,6 @@ body {
   height: 39px;
   left: 411px;
   top: 124px;
-
-  font-style: normal;
-  font-weight: 700;
   font-size: 26px;
   line-height: 39px;
 
@@ -47,21 +41,20 @@ body {
 
 .release {
   /* Director : Christopher Nolan */
-
   position: absolute;
   width: 411px;
   height: 23px;
   left: 411px;
-  top: 248px;
-
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
+  top: 236px;
   font-size: 15px;
   line-height: 22px;
   /* identical to box height */
 
   color: #000000;
+}
+
+.line-break {
+  margin-bottom: 20px;
 }
 
 .desc {
@@ -70,16 +63,19 @@ body {
   position: absolute;
   width: auto;
   left: 411px;
-  top: 284px;
+  top: 308px;
   right: 10%;
-
-  font-family: "Poppins";
-  font-style: normal;
   font-size: 15px;
-  line-height: 22px;
   /* identical to box height */
 
   color: #000000;
+}
+
+.bookmark {
+  position: absolute;
+  width: 36px;
+  left: 748px;
+  top: 184px;
 }
 
 .genre {
@@ -88,7 +84,7 @@ body {
   position: absolute;
   width: auto;
   left: 411px;
-  top: 359px;
+  margin-top: -172px;
 
   font-family: "Poppins";
   font-style: normal;
@@ -109,6 +105,82 @@ body {
 .genre-list li {
   font-weight: 400;
   list-style: none;
-  /* Gaya lainnya yang Anda miliki */
   margin-top: 20px;
+}
+
+.actor {
+  position: absolute;
+  margin-top: -56px;
+  left: 72px;
+}
+
+#cast {
+  list-style: none;
+  display: grid;
+  grid-column: 3;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px; /* Menyesuaikan jarak antara elemen-elemen */
+  /* atas kiri bawah kanan */
+  margin: 480px 20% 2% 4%;
+}
+
+.cast-img {
+  grid-row: span 3;
+  flex-basis: 25%;
+}
+
+.cast-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cast-member {
+  display: flex;
+  align-items: center;
+}
+
+.cast-name {
+  font-weight: bold;
+}
+
+.cast-chara {
+  margin-top: 5px; /* Menyesuaikan jarak antara nama dan karakter */
+}
+
+#foto {
+  display: flex;
+  overflow-x: scroll;
+  /* atas kiri bawah kanan */
+  margin: 0 420px 32px 72px;
+  padding-bottom: 16px;
+  list-style: none;
+}
+
+.foto-b {
+  margin-right: 8px;
+}
+
+.jdl-foto {
+  margin-left: 72px;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+  opacity: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 16, 1) 7%,
+    rgba(2, 0, 36, 1) 93%
+  );
+  border-radius: 10px;
+  border: 3px solid #ffffff;
 }
